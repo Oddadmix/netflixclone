@@ -6,6 +6,4 @@ const schema = new mongoose.Schema({
   provider: { type: String, required: true },
 });
 
-const User = mongoose.model('User', schema);
-
-export default User;
+export default mongoose.models.User || mongoose.model('User', schema);

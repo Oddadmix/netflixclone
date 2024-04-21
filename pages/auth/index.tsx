@@ -2,14 +2,32 @@ import Button from '@/components/button';
 import Input from '@/components/input';
 import Layout from '@/components/layout';
 import { useState } from 'react';
+import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 export default function Auth() {
   const [authType, setAuthType] = useState('signin');
+
+  const router = useRouter();
 
   const isSignIn = authType === 'signin';
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const handleSignIn = async () => {
+    const res = await signIn('credentials', {
+      username: email,
+      password,
+      callbackUrl: '/dashboard',
+    });
+    console.log(res);
+    if (res?.error) {
+      alert(res.error);
+    } else {
+      // router.push('/dashboard');
+    }
+  };
 
   return (
     <Layout
@@ -44,7 +62,7 @@ export default function Auth() {
 
         <div className='mb-6'>
           <Button
-            onClick={() => {}}
+            onClick={handleSignIn}
             label={`${isSignIn ? 'Sign In' : 'Create Account'}`}
           />
         </div>

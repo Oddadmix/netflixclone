@@ -13,7 +13,7 @@ export default async function handler(
   await DB.connect();
 
   const user = new User({
-    email: 'ahmed.m.wasfy+1@gmail.com',
+    email: 'ahmed.m.wasfy@gmail.com',
     provider: 'google',
   });
 
