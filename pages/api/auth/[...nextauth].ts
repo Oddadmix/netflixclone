@@ -3,6 +3,7 @@ import User from '@/lib/models/user';
 import NextAuth from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
 import bcrypt from 'bcrypt';
+import GoogleProvider from 'next-auth/providers/google';
 
 export const authOptions = {
   // Configure one or more authentication providers
@@ -54,6 +55,10 @@ export const authOptions = {
           }
         }
       },
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID!,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
   ],
 };
