@@ -10,7 +10,7 @@ export default function MoviesCategory({
   return (
     <div>
       <h2 className='text-white'>{category}</h2>
-      <div className='flex flex-row'>
+      <div className='flex flex-row gap-2'>
         {movies.map((movie) => {
           return <MovieTile movie={movie} />;
         })}

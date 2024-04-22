@@ -1,6 +1,9 @@
 import { Movie } from '@/types/movie';
+import { useRouter } from 'next/router';
 
 export default function MovieTile({ movie }: { movie?: Movie }) {
+  const router = useRouter();
+
   return (
     <div className='w-56 h-32 hover:scale-150 transition '>
       <img
@@ -10,6 +13,9 @@ export default function MovieTile({ movie }: { movie?: Movie }) {
       <div className='bg-black'>
         <div className='flex'>
           <button
+            onClick={() => {
+              router.push(`/dashboard/movie/${movie?.imdbID}`);
+            }}
             type='button'
             className='text-white border border-gray-40 hover:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center'
           >

@@ -6,6 +6,7 @@ export type Movie = {
   Genre: string;
   Plot: string;
   Poster: string;
+  imdbID: string;
   Type: 'movie' | 'series' | 'episode';
   imdbRating: string;
 };
