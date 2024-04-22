@@ -1,16 +1,20 @@
+import Layout from '@/components/layout';
 import { Movie } from '@/types/movie';
 import { GetServerSidePropsContext } from 'next';
 
 export default function Page({ data }: { data: Movie }) {
   return (
-    <div>
-      <h1>{data.Title}</h1>
-      <p>{data.Plot}</p>
-      <img
-        src={data.Poster}
-        alt={data.Title}
-      />
-    </div>
+    <Layout extraClasses='bg-black'>
+      <div className='p-4'>
+        <h1 className='text-4xl mb-3 text-white text-center'>{data.Title}</h1>
+        <p className='text-white mb-3  text-center'>{data.Plot}</p>
+        <img
+          className='text-center w-80 mx-auto'
+          src={data.Poster}
+          alt={data.Title}
+        />
+      </div>
+    </Layout>
   );
 }
 

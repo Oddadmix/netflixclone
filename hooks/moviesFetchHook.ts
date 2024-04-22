@@ -1,4 +1,3 @@
-import { Movie } from '@/types/movie';
 import { MoviesSearch } from '@/types/moviesSearch';
 import { useEffect, useState } from 'react';
 
@@ -17,7 +16,7 @@ export default function useMoviesFetchHook({ title }: { title: string }) {
     fetchMovies().then((movieRes: any) => {
       setMovies(movieRes);
     });
-  }, []);
+  }, [title]);
 
   return moveis;
 }
