@@ -34,7 +34,12 @@ export default function MoviesCategory({
       <h2 className='text-white'>{category}</h2>
       <Carousel responsive={responsive}>
         {movies.map((movie) => {
-          return <MovieTile movie={movie} />;
+          return (
+            <MovieTile
+              key={movie.Title}
+              movie={movie}
+            />
+          );
         })}
       </Carousel>
     </div>

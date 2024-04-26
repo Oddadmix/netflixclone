@@ -15,7 +15,10 @@ export default function Search() {
       <div className='grid grid-cols-2 gap-2 p-6'>
         {movies.Search?.map((movie) => {
           return (
-            <div className='mb-10'>
+            <div
+              className='mb-10'
+              key={movie.Title}
+            >
               <MovieTile
                 key={movie.imdbID}
                 movie={movie}
