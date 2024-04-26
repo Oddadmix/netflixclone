@@ -9,7 +9,7 @@ export default function MovieTile({ movie }: { movie?: Movie }) {
 
   return (
     <div
-      className='w-56 h-32 hover:scale-150 transition '
+      className='w-32 h-18 hover:scale-150 transition '
       onMouseOver={() => {
         setIsHovered(true);
       }}
@@ -17,10 +17,7 @@ export default function MovieTile({ movie }: { movie?: Movie }) {
         setIsHovered(false);
       }}
     >
-      <img
-        src={movie?.Poster}
-        className='w-56 h-32'
-      />
+      <img src={movie?.Poster} />
       {isHovered && (
         <div className='bg-black'>
           <div className='flex'>

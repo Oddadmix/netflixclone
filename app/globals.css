@@ -31,3 +31,7 @@ body {
     text-wrap: balance;
   }
 }
+
+.react-multi-carousel-list{
+  height: 330px;
+}
